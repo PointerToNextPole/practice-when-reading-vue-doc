@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .active{
+        border: solid 1px #20b2aa;
+        padding: 5px 10px;
+    }
+</style>
+
+<div id="app">
+    <!--若isActive为true，则将active赋值给class（这里的class是css相关的class）-->
+    <div v-bind:class="{ active: isActive }">hello world</div>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            isActive: true,
+        }
+    });
+</script>
+</body>
+</html>

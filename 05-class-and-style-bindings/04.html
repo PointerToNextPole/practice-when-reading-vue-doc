@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .active {
+        border: solid 1px #20b2aa;
+        padding: 5px 10px;
+    }
+</style>
+
+<div id="app">
+    <div v-bind:class="classObject"></div>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            isActive: true,
+            error: null
+        },
+        computed: {
+            classObject: function () {
+                return {
+                    active: this.isActive && !this.error,
+                    'text-danger': this.error && this.error.type === 'fatal'
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

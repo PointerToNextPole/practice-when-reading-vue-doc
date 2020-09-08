@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="demo">{{ fullName }}</div>
+
+<script>
+
+    //使用watch的版本，代码是重复的
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            firstName: 'Foo',
+            lastName: 'Bar',
+            fullName: 'Foo Bar'
+        },
+        watch: {
+            firstName: function (val) {
+                this.fullName = val + ' ' + this.lastName
+            },
+            lastName: function (val) {
+                this.fullName = this.firstName + ' ' + val
+            }
+        }
+    })
+
+    //使用计算属性的版本
+    var vm2 = new Vue({
+        el: '#demo',
+        data: {
+            firstName: 'Foo',
+            lastName: 'Bar'
+        },
+        computed: {
+            //getter
+            fullName: function () {
+                return this.firstName + ' ' + this.lastName
+            }
+        }
+    })
+</script>
+</body>
+</html>

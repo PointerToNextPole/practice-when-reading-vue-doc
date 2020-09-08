@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .active{
+        border: solid 1px #20b2aa;
+        padding: 10px 20px;
+    }
+    .text-danger{
+        border: solid 3px red;
+    }
+</style>
+
+<div id="app">
+    <!--即使是这里的'text-danger'也可以作为class的名称（之前没有接触过）-->
+    <div class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }">hello world</div>
+</div>
+
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            isActive: true,
+            hasError: false
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .active {
+        border: solid 1px #20b2aa;
+        padding: 5px 10px;
+    }
+    .text-danger{
+        border: solid 3px red;
+    }
+</style>
+
+<div id="app">
+    <div v-bind:class="classObject">hello world</div>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            classObject: {
+                active: true,
+                'text-danger': false
+            }
+        }
+    });
+</script>
+</body>
+</html>
