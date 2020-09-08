@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<button id="app" v-bind:disabled="isButtonDisabled">Button</button>
+
+<script>
+    var test = new Vue({
+        el: "#app",
+        data: {
+            isButtonDisabled: true  //不可按下
+            //isButtonDisabled: false  //可按下
+        }
+    });
+</script>
+</body>
+</html>

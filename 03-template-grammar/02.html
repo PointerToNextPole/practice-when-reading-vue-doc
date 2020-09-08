@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<span v-once>
+    <span id="app">
+        这个将不会改变: {{ msg }}
+    </span>
+</span>
+
+<script>
+    var tmp = new Vue({
+        el: "#app",
+        data: {
+            msg: 'hello'
+        }
+    });
+
+    app.msg = 'hello-world';
+</script>
+</body>
+</html>

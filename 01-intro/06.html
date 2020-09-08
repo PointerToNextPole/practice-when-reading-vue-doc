@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app-6">
+    <p>{{ message }}</p>
+    <input v-model="message">
+</div>
+
+<script>
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            //message相当于数据id的，后面的值相当于默认值(placeholder)
+            message: 'Hello Vue!'
+        }
+    })
+</script>
+</body>
+</html>
