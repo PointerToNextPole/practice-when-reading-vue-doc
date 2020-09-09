@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <button v-on:click="warn('Form cannot be submitted yet.', $event)">
+        Submit
+    </button>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        methods: {
+            warn: function (message, event) {
+                // 现在我们可以访问原生事件对象
+                if (event) {
+                    //若要查看发生了什么事件，可以使用下面一行的代码
+                    //console.log(event) // 是mouseEvent
+                    /**
+                     *Event 接口的 preventDefault()方法，告诉user agent：如果此事件没有被显式处理，
+                     * 它默认的动作也不应该照常执行。此事件还是继续传播，除非碰到事件侦听器调用
+                     * stopPropagation()或stopImmediatePropagation()，才停止传播。
+                     */
+                    event.preventDefault()
+                }
+                alert(message)
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .container{
+        height: 300px;
+        border: solid 2px black;
+        overflow: auto;
+    }
+    .scrollView{
+        height: 800px;
+        background-color: yellow;
+    }
+</style>
+
+<div id="app">
+    <div class="container" v-on:scroll.passive="onScroll">
+        <div class="scrollView">Scroll me</div>
+    </div>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        methods: {
+            onScroll: function (event) {
+                //只要内部的滚动条在滚动，则console就会打印出log
+                console.log("onScroll --> ", event);
+            }
+        }
+    })
+</script>
+</body>
+</html>

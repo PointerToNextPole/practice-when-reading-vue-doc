@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <!-- Ctrl + Click -->
+    <div v-on:click.ctrl="doSomething">Do something</div>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        methods: {
+            doSomething: function () {
+                alert("you pressing down the Ctrl key and clicking the word")
+            }
+        }
+    })
+</script>
+</body>
+</html>

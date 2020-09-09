@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input v-on:keyup.enter="submit">
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        methods: {
+            submit: function () {
+                alert("you enter \"enter\" key")
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <!-- Alt + C -->
+    <input v-on:keyup.ctrl.67="clear">
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        methods: {
+            clear: function () {
+                alert("you enter \"Alt + C\" key")
+            }
+        }
+    })
+</script>
+</body>
+</html>
