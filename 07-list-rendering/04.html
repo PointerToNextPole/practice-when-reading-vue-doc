@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .demo{
+        font-size: 15px;
+        color: red;
+    }
+</style>
+
+<ul id="v-for-object" class="demo">
+    <div v-for="(value, name) in object">
+        {{ name }}: {{ value }}
+    </div>
+</ul>
+
+<script>
+    var vm = new Vue({
+        el: '#v-for-object',
+        data: {
+            object: {
+                title: 'How to do lists in Vue',
+                author: 'Jane Doe',
+                publishedAt: '2016-04-10'
+            }
+        }
+    })
+</script>
+</body>
+</html>

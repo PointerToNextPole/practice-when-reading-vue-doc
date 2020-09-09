@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <li v-for="todo in todos" v-if="!todo.isComplete">
+        {{ todo.name }} is completed ? {{todo.isComplete}}
+    </li>
+</div>
+
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            todos: [
+                {name: "foo", isComplete: true},
+                {name: "bar", isComplete: false},
+                {name: "baz", isComplete: true},
+                {name: "boo", isComplete: false},
+            ]
+        }
+    })
+</script>
+</body>
+</html>

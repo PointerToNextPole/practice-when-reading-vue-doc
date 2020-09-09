@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<ul id="example-1">
+    <!--使用of替代in-->
+    <li v-for="item of items" :key="item.message">
+        {{ item.message }}
+    </li>
+</ul>
+
+<script>
+    var vm = new Vue({
+        el: '#example-1',
+        data: {
+            items: [
+                {message: 'Foo'},
+                {message: 'Bar'}
+            ]
+        }
+    })
+</script>
+</body>
+</html>
