@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <h1 v-if="awesome">Vue is awesome!</h1>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            awesome: true
+        }
+    });
+</script>
+</body>
+</html>
