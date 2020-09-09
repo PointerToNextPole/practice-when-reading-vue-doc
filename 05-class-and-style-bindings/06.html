@@ -12,25 +12,24 @@
         border: solid 1px #20b2aa;
         padding: 5px 10px;
     }
-    .text-danger{
+
+    .text-danger {
         border: solid 3px red;
     }
 </style>
 
 <div id="app">
-    <div v-bind:class="classObject">hello world</div>
+    <div v-bind:class="[isActive ? activeClass : '', errorClass]">hello world</div>
 </div>
 
 <script>
-    var vm = new Vue({
+    let vm = new Vue({
         el: "#app",
         data: {
-            classObject: {
-                active: true,
-                'text-danger': true
-            }
+            activeClass: 'active',
+            errorClass: 'text-danger'
         }
-    });
+    })
 </script>
 </body>
 </html>

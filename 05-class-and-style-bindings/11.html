@@ -7,27 +7,21 @@
 </head>
 <body>
 
-<style>
-    .active {
-        border: solid 1px #20b2aa;
-        padding: 5px 10px;
-    }
-    .text-danger{
-        border: solid 3px red;
-    }
-</style>
-
 <div id="app">
-    <div v-bind:class="classObject">hello world</div>
+    <div v-bind:style="[baseStyles, overridingStyles]">hello world</div>
 </div>
 
 <script>
     var vm = new Vue({
         el: "#app",
         data: {
-            classObject: {
-                active: true,
-                'text-danger': true
+            baseStyles: {
+                color: 'red',
+                fontSize: '13px'
+            },
+            overridingStyles: {
+                color: 'blue',
+                fontSize: '20px'
             }
         }
     });

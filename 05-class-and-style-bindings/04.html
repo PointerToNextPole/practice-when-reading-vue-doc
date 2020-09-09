@@ -12,10 +12,13 @@
         border: solid 1px #20b2aa;
         padding: 5px 10px;
     }
+    .text-danger{
+        border: solid 3px red;
+    }
 </style>
 
 <div id="app">
-    <div v-bind:class="classObject"></div>
+    <div v-bind:class="classObject">hello world</div>
 </div>
 
 <script>
@@ -27,8 +30,15 @@
         },
         computed: {
             classObject: function () {
+
+                //test code
+                console.log(this.isActive && !this.error)
+                console.log(this.error && this.error.type === 'fatal')
+
                 return {
+                    // !null === true
                     active: this.isActive && !this.error,
+                    // 因为折线导致需要加上引号
                     'text-danger': this.error && this.error.type === 'fatal'
                 }
             }
