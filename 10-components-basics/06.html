@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="blog-posts-events-demo">
+    <div :style="{ fontSize: postFontSize + 'em' }">
+        <blog-post
+                v-for="post in posts"
+                v-bind:key="post.id"
+                v-bind:post="post"
+        ></blog-post>
+    </div>
+</div>
+
+<script>
+    Vue.component('blog-post', {
+        props: ['post'],
+        //在模版内层的html中使用js函数无效！！！，只可以使用$emit(v-on-event)，并在外层真正调用时使用v-on:event="function"
+        template: `
+            <div class="blog-post">
+                <h3>{{ post.title }}</h3>
+                <button v-on:click="changeFontSize">
+                    Enlarge text
+                </button>
+                <div v-html="post.content"></div>
+            </div>
+        `
+    })
+
+    let vm = new Vue({
+        el: '#blog-posts-events-demo',
+        data: {
+            posts: [
+                {id: 1, title: "foo", content: "bar"},
+                {id: 2, title: "baz", content: "boo"},
+            ],
+            postFontSize: 1
+        },
+        methods: {
+            changeFontSize: function () {
+                this.postFontSize++;
+            }
+        }
+    })
+</script>
+</body>
+</html>
