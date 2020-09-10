@@ -8,16 +8,15 @@
 <body>
 
 <div id="app">
-    <input v-on:keyup.page-down="onPageDown">
+    </span><input type="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">{{ checked }}</label>
 </div>
 
 <script>
     var vm = new Vue({
         el: '#app',
-        methods: {
-            onPageDown: function () {
-                // alert("you enter \"PageDown\" key")
-            }
+        data: {
+            checked: false
         }
     })
 </script>

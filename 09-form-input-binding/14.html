@@ -8,16 +8,21 @@
 <body>
 
 <div id="app">
-    <input v-on:keyup.page-down="onPageDown">
+    <input type="radio" v-model="pick" v-bind:value="a">
+    <label>{{a}}</label>
+    <input type="radio" v-model="pick" v-bind:value="b">
+    <label>{{b}}</label>
+    <br>
+    {{pick}}
 </div>
 
 <script>
     var vm = new Vue({
         el: '#app',
-        methods: {
-            onPageDown: function () {
-                // alert("you enter \"PageDown\" key")
-            }
+        data: {
+            pick: "Your choice: ",
+            a: "vue",
+            b: "react"
         }
     })
 </script>

@@ -8,16 +8,17 @@
 <body>
 
 <div id="app">
-    <input v-on:keyup.page-down="onPageDown">
+    <input v-model="message" placeholder="edit me">
+    <p>Message is: {{ message }}</p>
 </div>
 
 <script>
     var vm = new Vue({
         el: '#app',
-        methods: {
-            onPageDown: function () {
-                // alert("you enter \"PageDown\" key")
-            }
+        data: {
+            message: ""
+            // message如果这时给它赋值为"hello world"，则它的初始值为"hello world"
+            // message: "hello world"
         }
     })
 </script>

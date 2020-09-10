@@ -8,17 +8,20 @@
 <body>
 
 <div id="app">
-    <input v-on:keyup.page-down="onPageDown">
+    <select v-model="selected">
+        <!-- 内联对象字面量 -->
+        <option v-bind:value="{ number: 123 }">123</option>
+    </select>
+    <br>
+    {{selected.number}}
 </div>
 
 <script>
     var vm = new Vue({
         el: '#app',
-        methods: {
-            onPageDown: function () {
-                // alert("you enter \"PageDown\" key")
-            }
-        }
+        data: {
+            selected: ""
+        },
     })
 </script>
 </body>

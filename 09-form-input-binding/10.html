@@ -8,16 +8,16 @@
 <body>
 
 <div id="app">
-    <input v-on:keyup.page-down="onPageDown">
+    <!-- 当选中时，`picked` 为字符串 "a" -->
+    <input type="radio" v-model="picked" value="a">
+    {{picked}}
 </div>
 
 <script>
     var vm = new Vue({
         el: '#app',
-        methods: {
-            onPageDown: function () {
-                // alert("you enter \"PageDown\" key")
-            }
+        data: {
+            picked: ""
         }
     })
 </script>

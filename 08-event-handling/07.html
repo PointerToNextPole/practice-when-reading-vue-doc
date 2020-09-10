@@ -8,15 +8,18 @@
 <body>
 
 <div id="app">
-    <input v-on:keyup.enter="submit">
+    <input v-model="inputStr" v-on:keyup.enter="submit">
 </div>
 
 <script>
     var vm = new Vue({
         el: '#app',
+        data: {
+            inputStr: ""
+        },
         methods: {
             submit: function () {
-                alert("you enter \"enter\" key")
+                alert(this.inputStr)
             }
         }
     })

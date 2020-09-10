@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <!--在“change”时而非“input”时更新，即：在用户按下回车之后，统一更新-->
+    <input v-model.lazy="msg" placeholder="Please input your msg">
+    <!--只要用户对于输入框有改变，都会进行更新-->
+    <!--<input v-model="msg" placeholder="Please input your msg">-->
+    <br>
+    {{msg}}
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: ""
+        },
+    })
+</script>
+</body>
+</html>

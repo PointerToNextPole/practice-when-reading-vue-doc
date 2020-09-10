@@ -8,16 +8,20 @@
 <body>
 
 <div id="app">
-    <input v-on:keyup.page-down="onPageDown">
+    <input
+            type="checkbox"
+            v-model="toggle"
+            true-value="yes"
+            false-value="no"
+    >
+    {{toggle}}
 </div>
 
 <script>
     var vm = new Vue({
         el: '#app',
-        methods: {
-            onPageDown: function () {
-                // alert("you enter \"PageDown\" key")
-            }
+        data: {
+            toggle: "Select your choice"
         }
     })
 </script>

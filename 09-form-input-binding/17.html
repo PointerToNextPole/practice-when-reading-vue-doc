@@ -8,17 +8,19 @@
 <body>
 
 <div id="app">
-    <input v-on:keyup.page-down="onPageDown">
+    <!--加上type="number"就不能输入非数字的字符-->
+    <input v-model.number="age" type="number">
+<!--    <input v-model.number="age">-->
+    <br>
+    {{age}} - {{typeof(age)}}
 </div>
 
 <script>
     var vm = new Vue({
         el: '#app',
-        methods: {
-            onPageDown: function () {
-                // alert("you enter \"PageDown\" key")
-            }
-        }
+        data: {
+            age: ""
+        },
     })
 </script>
 </body>
