@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<style>
+    .demo-alert-box {
+        padding: 10px 20px;
+        background: #f3beb8;
+        border: 1px solid #f09898;
+    }
+</style>
+
+<div id="blog-posts-events-demo">
+    <alert-box>
+        Something bad happened.
+    </alert-box>
+</div>
+
+<script>
+    Vue.component('alert-box', {
+        template: `
+    <div class="demo-alert-box">
+      <strong>Error!</strong>
+      <slot></slot>
+    </div>
+  `
+    })
+
+    let vm = new Vue({
+        el: '#blog-posts-events-demo',
+    })
+</script>
+</body>
+</html>
