@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <!-- 动态赋予一个变量的值 -->
+    <blog-post v-bind:title="post.title"></blog-post>
+
+    <!-- 动态赋予一个复杂表达式的值 -->
+    <blog-post v-bind:title="post.title + ' by ' + post.author.name"></blog-post>
+
+</div>
+
+<script>
+    Vue.component('blog-post', {
+
+        //props的参数必须要用对象或者数组！！！
+        props: ['title'],
+        template: '<h3>{{ title }}</h3>'
+    })
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            post: {
+                title: "hello world",
+                author: {
+                    name: "hello vue"
+                }
+            }
+        },
+    })
+</script>
+</body>
+</html>

@@ -8,12 +8,8 @@
 <body>
 
 <div id="app">
-    <!--
-        对于全局注册的component而言：
-        <my-component>和</my-component>中的内容是可以改写、并显示出来的，
-        而对于局部注册的component则不能
-    -->
-    <my-component>hello</my-component>
+    <!--即使这里写上"hello vue"，也不会显示；必须要用props-->
+    <component-a>hello vue</component-a>
 </div>
 
 <script>

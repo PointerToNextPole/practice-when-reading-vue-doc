@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <!--这里没有搞懂为什么不使用v-bind-->
+    <blog-post size="Hello Vue"></blog-post>
+</div>
+
+<script>
+    Vue.component('blog-post', {
+        props: ['size'],
+        computed: {
+            normalizedSize: function () {
+                return this.size.trim().toLowerCase()
+            }
+        },
+        template: '<h3>{{normalizedSize}}</h3>',
+    })
+
+    let vm = new Vue({
+        el: '#app',
+    })
+</script>
+</body>
+</html>

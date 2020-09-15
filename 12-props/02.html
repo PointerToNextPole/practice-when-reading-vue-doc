@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <!--在外层不能用大写，要用'-'连接-->
+    <blog-post title="hello vue"
+        :likes="5"
+        :is-published="true"
+        :comment-ids="[1, 2, 3]"
+        :author="{name: 'hello', age: 25}"
+    ></blog-post>
+</div>
+
+<script>
+    Vue.component('blog-post', {
+        // 在 JavaScript 中是 camelCase 的
+        props: {
+            title: String,
+            likes: Number,
+            isPublished: Boolean,
+            commentIds: Array,
+            author: Object,
+        },
+        template: '<h3>{{ title }} {{likes}} {{isPublished}} {{commentIds}} {{author}}</h3>'
+    })
+
+    let vm = new Vue({
+        el: '#app',
+    })
+</script>
+</body>
+</html>

@@ -7,13 +7,16 @@
 </head>
 <body>
 
+<!--todo-->
 <div id="app">
-    <register-component-a></register-component-a>
+    <registered-component-b>
+<!--        <component-a></component-a>-->
+    </registered-component-b>
 </div>
 
 <script>
-    var componentA = {
-        data: function () {
+    let ComponentA = {
+        data: function(){
             return {
                 message: "hello world"
             }
@@ -21,14 +24,18 @@
         template: "<h1>{{message}}</h1>"
     };
 
+    let ComponentB = {
+        components: {
+            'component-a': ComponentA
+            // componentA
+        },
+    };
+
     let vm = new Vue({
         el: '#app',
-        data: {
-            message: ""
-        },
         components: {
-            //这里注册的时候，必须用小写
-            'registered-component-a': componentA,
+            'registered-component-b': ComponentB,
+            // 'component-a': componentA
         }
     })
 </script>

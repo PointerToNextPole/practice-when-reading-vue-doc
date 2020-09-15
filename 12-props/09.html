@@ -8,28 +8,22 @@
 <body>
 
 <div id="app">
-    <registered-component-a></registered-component-a>
+    <blog-post :initial-counter="5"></blog-post>
 </div>
 
 <script>
-    var componentA = {
+    Vue.component('blog-post', {
+        props: ['initialCounter'],
         data: function () {
             return {
-                message: "hello world"
+                counter: this.initialCounter
             }
         },
-        template: "<h1>{{message}}</h1>"
-    };
+        template: '<h3>{{counter}}</h3>',
+    })
 
     let vm = new Vue({
         el: '#app',
-        data: {
-            message: ""
-        },
-        components: {
-            //这里注册的时候，必须用小写
-            'registered-component-a': componentA,
-        }
     })
 </script>
 </body>

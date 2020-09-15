@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <blog-post :label="label" :value="value"></blog-post>
+</div>
+
+<script>
+    Vue.component('blog-post', {
+        inheritAttrs: false,
+        props: ['label', 'value'],
+        template: `
+          <label>
+          {{ label }}
+          <input
+              v-bind="$attrs"
+              v-bind:value="value"
+              v-on:input="$emit('input', $event.target.value)"
+          >
+          </label>
+        `
+    })
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            label: "This is place you input:",
+            value: "hello vue"
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <!-- 即便对象是静态的，我们仍然需要 `v-bind` 来告诉 Vue -->
+    <!-- 这是一个 JavaScript 表达式而不是一个字符串。-->
+    <blog-post v-bind:author="{name: 'Veronica', company: 'Veridian Dynamics'}"></blog-post>
+
+    <!-- 用一个变量进行动态赋值。-->
+    <blog-post v-bind:author="post.author"></blog-post>
+</div>
+
+<script>
+    Vue.component('blog-post', {
+        props: ['author'],
+        template: '<h3>{{ author }}</h3>'
+    })
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            post: {
+                author: "hello world"
+            }
+        }
+    })
+</script>
+</body>
+</html>

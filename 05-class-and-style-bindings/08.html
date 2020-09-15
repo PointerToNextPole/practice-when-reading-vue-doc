@@ -18,12 +18,18 @@
     }
 </style>
 
-<!--todo-->
-<my-component class="baz boo">hello</my-component>
+<div id="app">
+    <my-component class="baz boo"></my-component>
+</div>
 
 <script>
     Vue.component('my-component', {
-        template: '<p class="foo bar">Hi</p>'
+        data: function (){
+            return {
+                msg: "hello world"
+            }
+        },
+        template: '<p class="foo bar">{{msg}}</p>'
     })
 
     let vm = new Vue({
